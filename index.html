@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCBMobile – Design PCBs on Android</title>
+  <style>
+    /* Reset and basic styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* App Bar */
+    .app-bar {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .app-bar h1 {
+      font-size: 1.5rem;
+    }
+
+    .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Navigation Menu */
+    nav {
+      background-color: #34495e;
+      position: fixed;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      height: 100%;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      border-bottom: 1px solid #2c3e50;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 1rem;
+    }
+
+    nav ul li a:hover {
+      background-color: #2c3e50;
+    }
+
+    nav.open {
+      transform: translateX(0);
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 20px 20px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    /* Download Button */
+    .download-btn {
+      display: inline-block;
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+    }
+
+    .download-btn:hover {
+      background-color: #c0392b;
+    }
+
+    /* App Icon */
+    .app-icon {
+      display: flex;
+      justify-content: center;
+      margin-top: 120px;
+      margin-bottom: 20px;
+    }
+
+    .app-icon img {
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav {
+        width: 100%;
+        top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-bar">
+    <h1>PCBMobile</h1>
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+  </header>
+
+  <nav id="navMenu">
+    <ul>
+      <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+      <li><a href="#features" onclick="toggleMenu()">Features</a></li>
+      <li><a href="#download" onclick="toggleMenu()">Download</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- App Icon -->
+  <div class="app-icon">
+    <img src="PCBMobile.png" alt="PCBMobile App Icon">
+  </div>
+
+  <section id="home">
+    <h2>Welcome to PCBMobile</h2>
+    <p>Design professional printed circuit boards directly on your Android device. Generate Gerber files ready for manufacturing, all from the palm of your hand.</p>
+  </section>
+
+  <section id="features">
+    <h2>Features</h2>
+    <ul>
+      <li>Intuitive touch-based PCB design interface</li>
+      <li>Support for multiple layers and components</li>
+      <li>Real-time design rule checking</li>
+      <li>Export Gerber files compatible with major manufacturers</li>
+      <li>Offline functionality – design anywhere, anytime</li>
+    </ul>
+  </section>
+
+  <section id="download">
+    <h2>Download PCBMobile</h2>
+    <p>Get started with PCBMobile today and bring your PCB designs to life.</p>
+    <a href="https://github.com/Keithmwesigwa/PCBmobile/releases/download/PCBMobile/pcbmobile.apk" class="download-btn">Download APK</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions or feedback? Reach out to us  <a href="mailto: cdxstudios31@gmail.com">here</a>.</p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
